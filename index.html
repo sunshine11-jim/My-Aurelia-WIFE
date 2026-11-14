@@ -1,0 +1,903 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08051c">
+<title>To My Sweetheart 🌌</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;600;700&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+    background:#050413;
+    color:white;
+    font-family:Poppins,sans-serif;
+    overflow-x:hidden;
+    min-height:100vh;
+}
+
+#universe{
+    position:fixed;
+    inset:0;
+    z-index:-5;
+    background:
+      radial-gradient(ellipse at 20% 30%,#4b1d65 0%,transparent 40%),
+      radial-gradient(ellipse at 80% 75%,#142b65 0%,transparent 40%),
+      linear-gradient(140deg,#050413,#130a28,#08091d);
+    transition:filter 2s;
+}
+
+#stars{
+    position:fixed;
+    inset:-50%;
+    z-index:-4;
+    background-image:
+    radial-gradient(white 1px,transparent 1px),
+    radial-gradient(#d6aaff 1px,transparent 1px);
+    background-size:55px 55px,95px 95px;
+    animation:starMove 80s linear infinite;
+}
+
+@keyframes starMove{
+    to{transform:rotate(360deg)}
+}
+
+.nebula{
+    position:fixed;
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    filter:blur(75px);
+    opacity:.24;
+    pointer-events:none;
+    z-index:-3;
+}
+
+.n1{background:#e24bca;top:10%;left:-100px}
+.n2{background:#416bff;right:-100px;bottom:10%}
+
+/* INTRO */
+
+.intro{
+    text-align:center;
+    padding:45px 15px 15px;
+}
+
+.intro small{
+    letter-spacing:5px;
+    color:#e8b9ff;
+    font-size:10px;
+}
+
+.intro h1{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(35px,9vw,55px);
+    margin-top:12px;
+    background:linear-gradient(90deg,#ff9edb,#b9a2ff,#a4e9ff,#ff9edb);
+    background-size:300%;
+    color:transparent;
+    background-clip:text;
+    animation:rainbow 5s linear infinite;
+}
+
+@keyframes rainbow{
+    to{background-position:300%}
+}
+
+/* MAIN CARD */
+
+.card{
+    width:92%;
+    max-width:480px;
+    margin:20px auto;
+    padding:25px 19px;
+    border:1px solid #e5aaff35;
+    border-radius:25px;
+    background:linear-gradient(145deg,#ffffff12,#ffffff05);
+    backdrop-filter:blur(15px);
+    box-shadow:0 0 35px #9e54ff17;
+    position:relative;
+    overflow:hidden;
+}
+
+.card:before{
+    content:"";
+    position:absolute;
+    inset:-100%;
+    background:linear-gradient(120deg,transparent 40%,#ffffff0b,transparent 60%);
+    animation:shine 7s linear infinite;
+}
+
+@keyframes shine{
+    to{transform:translateX(100%)}
+}
+
+.card-title{
+    text-align:center;
+    color:#f2c5ff;
+    letter-spacing:3px;
+    font-size:10px;
+    margin-bottom:22px;
+    position:relative;
+}
+
+/* MESSAGE */
+
+#story{
+    position:relative;
+    min-height:280px;
+}
+
+.story-line{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(20px,5vw,27px);
+    line-height:1.5;
+    margin:7px 0;
+    overflow-wrap:anywhere;
+    animation:lineEnter .6s ease both;
+}
+
+@keyframes lineEnter{
+    from{opacity:0;transform:translateY(15px) scale(.95)}
+    to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+.rgb{
+    background:linear-gradient(90deg,
+    #ff8ecb,#c9a2ff,#82e9ff,#fff0a6,#ff8ecb);
+    background-size:300%;
+    color:transparent;
+    background-clip:text;
+    animation:rainbow 3s linear infinite;
+    text-shadow:0 0 20px #ff8ec944;
+}
+
+.word-flash{
+    animation:wordFlash .65s ease;
+}
+
+@keyframes wordFlash{
+    0%{filter:brightness(1)}
+    50%{filter:brightness(3);transform:scale(1.08)}
+    100%{filter:brightness(1)}
+}
+
+/* PROGRESS */
+
+.progress{
+    height:3px;
+    width:100%;
+    background:#ffffff16;
+    margin-top:22px;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+#progressBar{
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg,#ff8ccf,#b69aff,#8ceaff);
+    transition:width .3s;
+}
+
+/* BUTTONS */
+
+.controls{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:20px auto;
+}
+
+button{
+    border:1px solid #e5b5ff65;
+    background:linear-gradient(135deg,#9a55a8,#5845a6);
+    color:white;
+    border-radius:30px;
+    padding:12px 19px;
+    font-family:Poppins,sans-serif;
+    font-size:12px;
+    cursor:pointer;
+    box-shadow:0 0 15px #b06bff35;
+    transition:.3s;
+}
+
+button:active{transform:scale(.92)}
+
+button:disabled{opacity:.5}
+
+/* PARTICLES */
+
+.particle{
+    position:fixed;
+    top:-40px;
+    pointer-events:none;
+    z-index:10;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    to{transform:translateY(110vh) rotate(600deg);opacity:0}
+}
+
+.burst{
+    position:fixed;
+    pointer-events:none;
+    z-index:20;
+    animation:burst .9s ease-out forwards;
+}
+
+@keyframes burst{
+    0%{transform:scale(.2);opacity:1}
+    100%{transform:translate(var(--x),var(--y)) scale(1.5);opacity:0}
+}
+
+/* MAGIC SWORDS */
+
+.battle{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:30;
+    background:#050413e9;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+}
+
+.battle.show{display:flex}
+
+.swords{
+    font-size:65px;
+    display:flex;
+    gap:50px;
+    align-items:center;
+}
+
+.sword{
+    animation:swordMove 1.2s ease-in-out infinite alternate;
+    filter:drop-shadow(0 0 15px #9adfff);
+}
+
+.sword:last-child{
+    animation-direction:alternate-reverse;
+}
+
+@keyframes swordMove{
+    to{transform:rotate(45deg) scale(1.3)}
+}
+
+.clash{
+    font-size:35px;
+    color:#c6eaff;
+    text-shadow:0 0 30px #fff;
+    animation:clash 1s infinite;
+}
+
+@keyframes clash{
+    50%{transform:scale(1.7);opacity:.3}
+}
+
+.battle p{
+    margin-top:30px;
+    letter-spacing:3px;
+    color:#d6c0ff;
+    font-size:12px;
+}
+
+/* SPOOKY SHADOW */
+
+.spooky{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:40;
+    background:#02020a;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+}
+
+.spooky.show{
+    display:flex;
+    animation:scareIn .3s ease;
+}
+
+@keyframes scareIn{
+    from{opacity:0;transform:scale(1.2)}
+    to{opacity:1;transform:scale(1)}
+}
+
+.ghost{
+    font-size:110px;
+    filter:drop-shadow(0 0 30px #a77aff);
+    animation:ghostFloat .5s infinite alternate;
+}
+
+@keyframes ghostFloat{
+    to{transform:translateY(-15px) rotate(8deg)}
+}
+
+.spooky p{
+    margin-top:25px;
+    color:#e9c9ff;
+    letter-spacing:3px;
+    font-size:12px;
+}
+
+/* 10 SECOND ENDING */
+
+#cinema{
+    position:fixed;
+    inset:0;
+    z-index:100;
+    background:#02020c;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    overflow:hidden;
+}
+
+#cinema.show{display:flex}
+
+.galaxy{
+    position:absolute;
+    width:150vmax;
+    height:150vmax;
+    border-radius:50%;
+    background:
+    repeating-radial-gradient(ellipse at center,
+    transparent 0 45px,#5d42ae19 47px 49px,transparent 52px 90px),
+    conic-gradient(from 0deg,#4b2e9d33,#ff8ac933,#172e8733,#b36aff33,#4b2e9d33);
+    filter:blur(2px);
+    animation:galaxySpin 10s linear forwards;
+}
+
+@keyframes galaxySpin{
+    0%{transform:scale(.08) rotate(0deg)}
+    45%{transform:scale(.65) rotate(170deg)}
+    100%{transform:scale(1.6) rotate(900deg)}
+}
+
+.planet{
+    position:absolute;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:radial-gradient(circle at 30% 30%,#ffd9ff,#a25eff,#22115c);
+    box-shadow:0 0 35px #b47aff;
+    animation:planetOrbit 5s linear infinite;
+}
+
+.p1{top:15%;left:12%}
+.p2{bottom:17%;right:12%;width:38px;height:38px}
+.p3{top:25%;right:10%;width:23px;height:23px}
+
+@keyframes planetOrbit{
+    to{transform:rotate(360deg) translateX(30px)}
+}
+
+#cinemaText{
+    position:relative;
+    z-index:5;
+    text-align:center;
+    padding:20px;
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(25px,7vw,48px);
+    color:#fff;
+    text-shadow:0 0 25px #d18bff;
+    opacity:0;
+    transition:opacity 1s;
+    max-width:95%;
+}
+
+#cinemaText.visible{opacity:1}
+
+/* PROPOSAL */
+
+#proposal{
+    position:fixed;
+    inset:0;
+    z-index:150;
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:25px;
+    background:
+    radial-gradient(circle at center,#3b165b,#100a26 65%,#03020a);
+}
+
+#proposal.show{
+    display:flex;
+    animation:proposalIn 2s ease;
+}
+
+@keyframes proposalIn{
+    from{opacity:0;transform:scale(.8)}
+    to{opacity:1;transform:scale(1)}
+}
+
+.ring{
+    font-size:75px;
+    animation:ringFloat 2s infinite alternate;
+    filter:drop-shadow(0 0 25px #ffb8dd);
+}
+
+@keyframes ringFloat{
+    to{transform:translateY(-12px) scale(1.12)}
+}
+
+#proposal h1{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(36px,9vw,58px);
+    margin:15px 0;
+    background:linear-gradient(90deg,#ffc0e9,#fff,#c3aaff);
+    color:transparent;
+    background-clip:text;
+}
+
+#proposal p{
+    color:#eedbff;
+    font-size:14px;
+    line-height:2;
+    max-width:400px;
+}
+
+#proposal .ending{
+    margin-top:20px;
+    font-size:17px;
+    color:#ffbde7;
+    line-height:1.8;
+}
+
+.footer{
+    text-align:center;
+    padding:10px 15px 35px;
+    color:#ad91c7;
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+@media(max-width:500px){
+    .intro{padding-top:35px}
+    .card{padding:20px 15px}
+    .story-line{font-size:22px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="universe"></div>
+<div id="stars"></div>
+<div class="nebula n1"></div>
+<div class="nebula n2"></div>
+
+<div class="intro">
+    <small>✦ A SECRET MESSAGE FROM MY HEART ✦</small>
+    <h1>For My Sweetheart</h1>
+</div>
+
+<div class="card">
+
+    <div class="card-title">
+        ♡ SOMETHING I WANT TO TELL YOU ♡
+    </div>
+
+    <div id="story"></div>
+
+    <div class="progress">
+        <div id="progressBar"></div>
+    </div>
+
+</div>
+
+<div class="controls">
+    <button id="startBtn" onclick="startStory()">
+        ✨ Start Our Story
+    </button>
+
+    <button onclick="toggleSound()" id="soundBtn">
+        🔊 Sound ON
+    </button>
+</div>
+
+<div class="footer">
+    MADE WITH A LITTLE MAGIC & LOTS OF LOVE ♡
+</div>
+
+<!-- SWORD SCENE -->
+
+<div class="battle" id="battle">
+    <div class="swords">
+        <span class="sword">⚔️</span>
+        <span class="clash">✦</span>
+        <span class="sword">⚔️</span>
+    </div>
+    <p>A MAGICAL CLASH OF TWO UNIVERSES</p>
+</div>
+
+<!-- SPOOKY SCENE -->
+
+<div class="spooky" id="spooky">
+    <div class="ghost">👻</div>
+    <p>WAIT... EVEN THE SHADOWS KNOW YOU! ♡</p>
+</div>
+
+<!-- CINEMATIC ENDING -->
+
+<div id="cinema">
+    <div class="galaxy"></div>
+    <div class="planet p1"></div>
+    <div class="planet p2"></div>
+    <div class="planet p3"></div>
+    <div id="cinemaText"></div>
+</div>
+
+<!-- FINAL PROPOSAL -->
+
+<div id="proposal">
+    <div class="ring">💍</div>
+
+    <h1>My Sweetheart...</h1>
+
+    <p>
+        If I could choose one star in this endless universe,
+        I would choose the one that reminds me of you.
+        Every single time.
+    </p>
+
+    <div class="ending">
+        I really love you, Jim. ❤️<br>
+        I love you soooo much, baby! 🥹💕<br>
+        You are my favourite universe.
+    </div>
+
+    <button onclick="proposalSurprise()">
+        💗 A little more love
+    </button>
+
+    <p id="surpriseText" style="margin-top:15px"></p>
+</div>
+
+<script>
+
+/* =================================
+   SOUND ENGINE - NO EXTERNAL FILES
+================================= */
+
+let audioCtx;
+let soundEnabled = true;
+
+function initAudio(){
+    if(!audioCtx){
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if(audioCtx.state === "suspended") audioCtx.resume();
+}
+
+function tone(freq=440,duration=.2,type="sine",volume=.05){
+    if(!soundEnabled || !audioCtx) return;
+
+    const osc=audioCtx.createOscillator();
+    const gain=audioCtx.createGain();
+
+    osc.type=type;
+    osc.frequency.setValueAtTime(freq,audioCtx.currentTime);
+
+    gain.gain.setValueAtTime(volume,audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+duration);
+
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+
+    osc.start();
+    osc.stop(audioCtx.currentTime+duration);
+}
+
+function magicSound(){
+    tone(600,.3);
+    setTimeout(()=>tone(850,.4),100);
+    setTimeout(()=>tone(1100,.5),200);
+}
+
+function toggleSound(){
+    soundEnabled=!soundEnabled;
+    document.getElementById("soundBtn").textContent=
+        soundEnabled?"🔊 Sound ON":"🔇 Sound OFF";
+
+    if(soundEnabled){
+        initAudio();
+        magicSound();
+    }
+}
+
+/* =================================
+   STORY WORDS
+================================= */
+
+const lines=[
+    "Jim...",
+    "You are my little sunshine. ☀️",
+    "My favourite person in this world.",
+    "My sweetest little miracle. 🦋",
+    "If I could paint the universe...",
+    "I would fill it with your smile. 🌸",
+    "Every star would carry your name.",
+    "Every galaxy would remind me of you. 🌌",
+    "And every little heartbeat would whisper...",
+    "You are special to me. 💗",
+    "More than words could ever explain.",
+    "No matter how big this universe gets...",
+    "My favourite place will always be beside you.",
+    "I really love you, Jim. ❤️",
+    "I love you soooo much, baby! 🥹💕"
+];
+
+const story=document.getElementById("story");
+const progressBar=document.getElementById("progressBar");
+
+let lineIndex=0;
+let typingTimer;
+let running=false;
+
+function startStory(){
+    if(running) return;
+
+    initAudio();
+    running=true;
+
+    document.getElementById("startBtn").disabled=true;
+
+    typeNextLine();
+}
+
+function typeNextLine(){
+
+    if(lineIndex>=lines.length){
+        setTimeout(runRandomEvents,1000);
+        return;
+    }
+
+    const current=lines[lineIndex];
+    const el=document.createElement("div");
+
+    el.className="story-line rgb";
+    story.appendChild(el);
+
+    let charIndex=0;
+
+    function typeCharacter(){
+
+        if(charIndex<current.length){
+
+            el.textContent=current.substring(0,charIndex+1);
+            charIndex++;
+
+            if(current[charIndex-1]===" "){
+                el.classList.remove("word-flash");
+                void el.offsetWidth;
+                el.classList.add("word-flash");
+                tone(650,.08);
+            }
+
+            if(charIndex%3===0){
+                tone(480+Math.random()*250,.04,"sine",.015);
+            }
+
+            typingTimer=setTimeout(typeCharacter,55);
+
+        }else{
+
+            lineIndex++;
+
+            progressBar.style.width=
+                (lineIndex/lines.length*100)+"%";
+
+            magicSound();
+
+            if(lineIndex===3 || lineIndex===7 || lineIndex===13){
+                flowerBurst();
+            }
+
+            setTimeout(typeNextLine,650);
+        }
+    }
+
+    typeCharacter();
+}
+
+/* =================================
+   FLOWER RAIN
+================================= */
+
+const flowers=["🌸","🌺","🌷","🌹","💮","🌼","🦋"];
+
+function flowerRain(amount=25){
+
+    for(let i=0;i<amount;i++){
+
+        setTimeout(()=>{
+
+            const f=document.createElement("div");
+            f.className="particle";
+            f.textContent=flowers[
+                Math.floor(Math.random()*flowers.length)
+            ];
+
+            f.style.left=Math.random()*100+"vw";
+            f.style.fontSize=(18+Math.random()*22)+"px";
+            f.style.animationDuration=(4+Math.random()*5)+"s";
+
+            document.body.appendChild(f);
+
+            setTimeout(()=>f.remove(),10000);
+
+        },i*60);
+    }
+}
+
+function flowerBurst(){
+    flowerRain(18);
+}
+
+/* =================================
+   SPARKLE BURST
+================================= */
+
+function burst(x,y){
+
+    const symbols=["✨","💗","⭐","🌟","♡"];
+
+    for(let i=0;i<15;i++){
+
+        const p=document.createElement("div");
+        p.className="burst";
+        p.textContent=symbols[i%symbols.length];
+
+        p.style.left=x+"px";
+        p.style.top=y+"px";
+
+        p.style.setProperty("--x",(Math.random()-.5)*200+"px");
+        p.style.setProperty("--y",(Math.random()-.5)*200+"px");
+
+        document.body.appendChild(p);
+
+        setTimeout(()=>p.remove(),1000);
+    }
+}
+
+document.addEventListener("click",e=>{
+    if(!e.target.closest("button")){
+        burst(e.clientX,e.clientY);
+    }
+});
+
+/* =================================
+   SPECIAL EVENTS
+================================= */
+
+function wait(ms){
+    return new Promise(resolve=>setTimeout(resolve,ms));
+}
+
+async function runRandomEvents(){
+
+    // Flower rain
+    flowerRain(65);
+    await wait(2500);
+
+    // Magical sword light clash
+    document.getElementById("battle").classList.add("show");
+    tone(180,.7,"sawtooth",.08);
+    await wait(2000);
+    document.getElementById("battle").classList.remove("show");
+
+    // Cute spooky surprise
+    await wait(800);
+    document.getElementById("spooky").classList.add("show");
+    tone(150,.5,"sine",.04);
+    await wait(1800);
+    document.getElementById("spooky").classList.remove("show");
+
+    // Magical transformation
+    flowerRain(70);
+    magicSound();
+    await wait(1800);
+
+    // Final 10 seconds
+    startCinema();
+}
+
+/* =================================
+   CINEMATIC 10 SECOND UNIVERSE
+================================= */
+
+const cinema=document.getElementById("cinema");
+const cinemaText=document.getElementById("cinemaText");
+
+const cinemaScenes=[
+    "Look at all these stars... ✨",
+    "Somewhere in this endless universe...",
+    "There is one person...",
+    "Who makes my world brighter. 💗",
+    "And that person is YOU, Jim.",
+    "My favourite star... 🌟",
+    "My favourite universe...",
+    "My sweetest forever...",
+    "I have one little question for you...",
+    "Will you be my forever? 💍"
+];
+
+async function startCinema(){
+
+    cinema.classList.add("show");
+
+    document.getElementById("universe").style.filter=
+        "brightness(1.5)";
+
+    for(let i=0;i<cinemaScenes.length;i++){
+
+        cinemaText.classList.remove("visible");
+        await wait(150);
+
+        cinemaText.textContent=cinemaScenes[i];
+        cinemaText.classList.add("visible");
+
+        tone(400+i*45,.3,"sine",.04);
+
+        flowerRain(5);
+
+        await wait(850);
+    }
+
+    await wait(500);
+
+    cinemaText.classList.remove("visible");
+
+    cinema.style.transition="opacity 1.5s";
+    cinema.style.opacity="0";
+
+    await wait(1500);
+
+    cinema.classList.remove("show");
+    cinema.style.opacity="1";
+
+    document.getElementById("proposal").classList.add("show");
+
+    flowerRain(100);
+    magicSound();
+
+    for(let i=0;i<5;i++){
+        setTimeout(()=>{
+            flowerRain(15);
+        },i*700);
+    }
+}
+
+/* =================================
+   FINAL SURPRISE
+================================= */
+
+function proposalSurprise(){
+
+    document.getElementById("surpriseText").innerHTML=
+    "No matter how many stars exist...<br>" +
+    "You will always be my favourite one. 🌙💗";
+
+    flowerRain(80);
+    magicSound();
+}
+
+</script>
+
+</body>
+</html>
